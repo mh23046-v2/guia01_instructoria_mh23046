@@ -5,6 +5,16 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\AutorController;
+use App\Http\Controllers\CategoriaController;
+use App\Http\Controllers\LibroController;
+use App\Http\Controllers\PrestamoController;
+
+Route::apiResource('autores', AutorController::class);
+Route::apiResource('categorias', CategoriaController::class);
+Route::apiResource('libros', LibroController::class);
+Route::apiResource('prestamos', PrestamoController::class);
+
 Route::prefix('auth')->group(function () {
     Route::post('/register', [AuthController::class, 'register']);
     Route::post('/login', [AuthController::class, 'login']);
